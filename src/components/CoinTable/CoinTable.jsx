@@ -10,6 +10,7 @@ const CoinTable = () => {
     retry: 2, // Retry fetching data 2 times on failure
     retryDelay: 1000, // Retry after 1 second
     cacheTime: 1000 * 60 * 2, // Cache for 2 minutes
+    staleTime: 1000 * 60 * 2, // Data is fresh for 1 minute
   });
 
   if (isError) {
@@ -18,7 +19,7 @@ const CoinTable = () => {
 
   return (
     <div className="my-5 flex flex-col items-center justify-center gap-5 w-[80vw] mx-auto">
-      <div className="w-full bg-orange-600 flex flex-row justify-center text-black py-4 px-4 font-semibold items-center rounded-sm">
+      <div className="w-full bg-orange-600 flex flex-row justify-center text-black py-4 px-4 font-semibold items-center rounded-[3px]">
         {/* Header of the table */}
         <div className="basis-[35%]">Coin</div>
         <div className="basis-[25%]">Price</div>
@@ -33,7 +34,7 @@ const CoinTable = () => {
             return (
               <div
                 key={coin.id}
-                className="w-full bg-transparent text-white flex py-4 px-2 font-semibold items-center justify-between cursor-pointer"
+                className="w-full bg-transparent text-white flex py-4 px-4 font-semibold items-center justify-around cursor-pointer"
               >
                 {/*Coin row*/}
                 <div className="flex flex-row items-center justify-start gap-3 basis-[35%]">
