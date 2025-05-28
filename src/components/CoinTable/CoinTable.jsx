@@ -22,7 +22,9 @@ const CoinTable = ({ currency }) => {
       <div className="w-full bg-orange-600 flex flex-row justify-center text-black py-4 px-4 font-semibold items-center rounded-[3px]">
         {/* Header of the table */}
         <div className="basis-[35%]">Coin</div>
-        <div className="basis-[25%]">Price</div>
+        <div className="basis-[25%]">
+          Price in <span style={{ color: "white" }}>{currency}</span>
+        </div>
         <div className="basis-[20%]">24h Change</div>
         <div className="basis-[20%]">Market Cap</div>
       </div>
