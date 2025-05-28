@@ -1,4 +1,4 @@
-const Navbar = () => {
+const Navbar = ({ setCurrency }) => {
   return (
     <div className="navbar bg-base-100 shadow-sm">
       <div className="navbar-start">
@@ -22,15 +22,15 @@ const Navbar = () => {
           </div>
           <ul
             tabIndex={0}
-            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
+            className="menu menu-sm dropdown-content bg-base-100 rounded-lg z-1 mt-3 w-35 p-2 shadow "
           >
-            <li>
+            <li className="w-full">
               <a>Homepage</a>
             </li>
-            <li>
+            <li onClick={() => setCurrency("inr")} className="w-full">
               <a>INR</a>
             </li>
-            <li>
+            <li onClick={() => setCurrency("usd")} className="w-full">
               <a>USD</a>
             </li>
           </ul>
