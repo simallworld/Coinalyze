@@ -1,4 +1,4 @@
-##Coinalyze
+## Coinalyze
 
 **Notion Doc:** (https://www.notion.so/Coinalyze-1ffad40474bd80b58be2c4a0efabb02a?source=copy_link)
 
