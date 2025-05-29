@@ -1,11 +1,12 @@
-import { useContext, useState } from "react";
+import { useState } from "react";
+// import { useContext} from "react";
 import { fetchCoinData } from "../../services/fetchCoinData";
 import { useQuery } from "@tanstack/react-query";
-import { CurrencyContext } from "../../context/CurrencyContext";
+// import { CurrencyContext } from "../../context/CurrencyContext";
+import currencyStore from "../../zustand/store";
 
 const CoinTable = () => {
-
-  const { currency } = useContext(CurrencyContext);
+  const { currency } = currencyStore();
 
   const [page, setPage] = useState(1);
   const { data, isLoading, isError, error } = useQuery({
@@ -27,7 +28,7 @@ const CoinTable = () => {
         {/* Header of the table */}
         <div className="basis-[35%]">Coin</div>
         <div className="basis-[25%]">
-          Price in <span style={{ color: "white" }}>{currency}</span>
+          Price in <span className="">{currency}</span>
         </div>
         <div className="basis-[20%]">24h Change</div>
         <div className="basis-[20%]">Market Cap</div>
