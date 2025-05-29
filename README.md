@@ -1,3 +1,7 @@
+##Coinalyze
+
+**Notion Doc:** (https://www.notion.so/Coinalyze-1ffad40474bd80b58be2c4a0efabb02a?source=copy_link)
+
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
