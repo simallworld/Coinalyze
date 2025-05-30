@@ -1,10 +1,16 @@
 // import { useContext } from "react";
 // import { CurrencyContext } from "../../context/CurrencyContext";
-import currencyStore from '../../zustand/store';
+import { useNavigate } from "react-router-dom";
+import currencyStore from "../../zustand/store";
 
 const Navbar = () => {
   //Implementing Zustand for global state management
   const { setCurrency } = currencyStore();
+  const navigate = useNavigate();
+
+  function gotoHome() {
+    navigate("/");
+  }
 
   return (
     <div className="navbar bg-base-100 shadow-sm">
@@ -31,7 +37,7 @@ const Navbar = () => {
             tabIndex={0}
             className="menu menu-sm dropdown-content bg-base-100 rounded-lg z-1 mt-3 w-35 p-2 shadow "
           >
-            <li className="w-full">
+            <li onClick={gotoHome} className="w-full">
               <a>Homepage</a>
             </li>
             <li onClick={() => setCurrency("inr")} className="w-full">
@@ -43,7 +49,7 @@ const Navbar = () => {
           </ul>
         </div>
       </div>
-      <div className="navbar-center flex flex-col">
+      <div onClick={gotoHome} className="navbar-center flex flex-col">
         <a className="btn btn-ghost text-2xl">Coinalyze</a>
         {/* <p className="text-sm">Crypto Currency Tracker Application</p> */}
       </div>
