@@ -6,7 +6,7 @@ const CoinDetails = () => {
 
     return (
         <>
-        CoinsDetails Page {coinId}
+        Coins Details Page {coinId}
         </>
     )
 }

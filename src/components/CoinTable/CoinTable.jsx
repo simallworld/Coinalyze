@@ -25,6 +25,7 @@ const CoinTable = () => {
     return <div>Error: {error.message}</div>;
   }
 
+  //To navigate to the coin details page prorammatically
   function handleCoinRedirect(coinId) {
     navigate(`/details/${coinId}`);
   }
