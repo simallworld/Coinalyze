@@ -61,6 +61,7 @@ const CoinTable = () => {
                       src={coin.image}
                       alt="coinSymbol"
                       className="w-full h-full"
+                      loading="lazy"
                     />
                     {/*Coin image*/}
                   </div>
