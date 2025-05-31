@@ -5,6 +5,7 @@ import { useQuery } from "@tanstack/react-query";
 // import { CurrencyContext } from "../../context/CurrencyContext";
 import currencyStore from "../../zustand/store";
 import { useNavigate } from "react-router-dom";
+import PageLoader from "../PageLoader/PageLoader";
 
 const CoinTable = () => {
   const { currency } = currencyStore();
@@ -25,7 +26,7 @@ const CoinTable = () => {
     return <div>Error: {error.message}</div>;
   }
 
-  //To navigate to the coin details page prorammatically
+  //To navigate to the coin details page programmatically
   function handleCoinRedirect(coinId) {
     navigate(`/details/${coinId}`);
   }
@@ -43,7 +44,7 @@ const CoinTable = () => {
       </div>
 
       <div className="flex flex-col w-[80vw] mx-auto">
-        {isLoading && <div>Loading...</div>}
+        {isLoading && <PageLoader />}
         {data &&
           data.map((coin) => {
             return (
