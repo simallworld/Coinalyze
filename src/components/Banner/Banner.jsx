@@ -2,7 +2,7 @@ const Banner = () => {
   const bannerImage =
     "https://images.unsplash.com/photo-1640459958548-56c1c6717a40?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
   return (
-    <div className="w-full h-[20rem] relative bg-cover opacity-95">
+    <div className="w-full h-[20rem] relative bg-cover opacity-95 select-none">
       <img src={bannerImage} alt="banner" className="w-full h-full bg-cover" />
 
       <div className="absolute top-20 left-0 right-0 mx-auto w-[40rem] items-center justify-center text-center">

@@ -35,7 +35,7 @@ const CoinDetails = () => {
   }
 
   return (
-    <div className="flex flex-col md:flex-row">
+    <div className="flex flex-col md:flex-row select-none">
       <div className="md:w-1/3 w-full flex flex-col items-center mt-6 md:mt-0 border-r-2 border-gray-500">
         <img src={coin?.image?.large} alt={coin.name} className="h-52 mb-5" />
         <h1 className="text-4xl font-bold mb-5">{coin?.name}</h1>

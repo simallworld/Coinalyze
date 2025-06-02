@@ -33,7 +33,7 @@ const CoinTable = () => {
   }
 
   return (
-    <div className="my-5 flex flex-col items-center justify-center gap-5 w-[80vw] mx-auto">
+    <div className="my-5 flex flex-col items-center justify-center gap-5 w-[80vw] mx-auto select-none">
       <div className="w-full bg-orange-600 flex flex-row justify-center text-black py-4 px-4 font-semibold items-center rounded-[3px]">
         {/* Header of the table */}
         <div className="basis-[35%]">Coin</div>

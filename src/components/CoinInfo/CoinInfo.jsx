@@ -72,7 +72,7 @@ const CoinInfo = ({
 
   return (
     <>
-      <div className="flex flex-col h-[500px] items-center justify-center mt-6 p-6 w-full md:w-3/4">
+      <div className="flex flex-col h-[500px] items-center justify-center mt-6 p-6 w-full md:w-3/4 select-none">
         <Line data={chartData} options={options} />
       </div>
 
