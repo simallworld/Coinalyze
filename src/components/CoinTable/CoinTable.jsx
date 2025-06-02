@@ -6,6 +6,7 @@ import { useQuery } from "@tanstack/react-query";
 import currencyStore from "../../zustand/store";
 import { useNavigate } from "react-router-dom";
 import PageLoader from "../PageLoader/PageLoader";
+import Alert from "../Alert/Alert";
 
 const CoinTable = () => {
   const { currency } = currencyStore();
@@ -13,7 +14,7 @@ const CoinTable = () => {
   const navigate = useNavigate();
 
   const [page, setPage] = useState(1);
-  const { data, isLoading, isError, error } = useQuery({
+  const { data, isLoading, isError } = useQuery({
     queryKey: ["coins", page, currency],
     queryFn: () => fetchCoinData(page, currency),
     //retry: 2, // Retry fetching data 2 times on failure
@@ -23,7 +24,7 @@ const CoinTable = () => {
   });
 
   if (isError) {
-    return <div>Error: {error.message}</div>;
+    return <Alert message={`Too many requests, try after a while`} type="error" />;
   }
 
   //To navigate to the coin details page programmatically

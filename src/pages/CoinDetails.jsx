@@ -4,6 +4,7 @@ import { fetchCoinDetails } from "../services/fetchCoinDetails";
 import currencyStore from "../zustand/store";
 import parse from "html-react-parser";
 import PageLoader from "../components/PageLoader/PageLoader";
+import CoinInfoContainer from "../components/CoinInfo/CoinInfoContainer";
 
 const CoinDetails = () => {
   const { coinId } = useParams();
@@ -25,7 +26,12 @@ const CoinDetails = () => {
     return <PageLoader />;
   }
   if (isError) {
-    return <div>Error: Something went wrong</div>;
+    return (
+      <Alert
+        message="Error fetching data (Too many requests, try after a while)"
+        type="error"
+      />
+    );
   }
 
   return (
@@ -37,22 +43,25 @@ const CoinDetails = () => {
           {parse(coin?.description?.en)}
         </p>
 
-        <div className="w-full flex flex-col md:flex-row justify-around">
+        <div className="w-full flex flex-col md:flex-row justify-around mb-5">
           <div className="flex items-center mb-4 md:mb-0">
             <h2 className="text-xl font-bold">Rank</h2>
             <span className="ml-3 text-xl">{coin?.market_cap_rank}</span>
           </div>
 
-          <div className="flex items-center mb-4 md:mb-0">
+          <div className="flex items-between mb-4 md:mb-0">
             <h2 className="text-xl font-bold text-yellow-400">Current Price</h2>
             <span className="ml-3 text-xl">
+              {currency === "usd" ? "$" : "₹"}
               {coin?.market_data?.current_price[currency]}
             </span>
           </div>
         </div>
       </div>
 
-      <div className="md:w-2/3 w-full p-6">Coin Information</div>
+      <div className="md:w-2/3 w-full p-6 flex flex-col items-center">
+        <CoinInfoContainer coinId={coinId} />
+      </div>
     </div>
   );
 };
